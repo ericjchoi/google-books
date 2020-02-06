@@ -1,0 +1,8 @@
+button {
+  float: right;
+  margin: 0 2px;
+}
+.bookImage {
+    float: left;
+    margin-right: 15px;
+}
