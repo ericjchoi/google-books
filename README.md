@@ -31,7 +31,7 @@ Figure 4. Rendering `Saved` books data from mongoDB
 
 ## Under construction
 - `delete` button click deletes the book from mongoDB
-- handle erroneous search word entry
+- handle erroneous search word entry and duplicated save attempt, etc.
 - deploy to Heroku
 
 ## Technologies used
@@ -43,4 +43,4 @@ Figure 4. Rendering `Saved` books data from mongoDB
 - React, JSX
 
 # Run App in Heroku
-- link will be added upon development
+- link will be added upon deployment
