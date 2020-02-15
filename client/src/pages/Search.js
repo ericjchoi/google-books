@@ -7,6 +7,7 @@ import SubContainer from "../components/SubContainer/subContainer.js";
 import ResultCard from "../components/ResultCard/resultCard.js";
 import API from "../utils/API.js";
 import Saved from "./Saved.js";
+import NoMatch from "./NoMatch.js";
 
 class Search extends Component {
   state = {
@@ -20,7 +21,8 @@ class Search extends Component {
         books: res.data.items,
         searchWord: "",
       }))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)
+      );
   };
 
   handleInputChange = event => {
@@ -54,42 +56,44 @@ class Search extends Component {
   };
 
   render() {
-    return (
-      <MainContainer fluid>
-        <Nav />
-        <Jumbotron />
-        <form>
-          <Input
-            value={this.state.searchWord}
-            onChange={this.handleInputChange}
-            name="searchWord"
-            placeholder="Please enter a book title."
-          />
-          <SearchBtn onClick={this.searchBtnClickHandle}>
-            Search</SearchBtn>
-          <br /><br />
-        </form>
-        {this.state.books.length ? (
-          <SubContainer>
-            <h2>Searched Result</h2>
-            {this.state.books.map(item => (
-              <ResultCard
-                key={item.id}
-                id={item.id}
-                title={item.volumeInfo.title}
-                authors={item.volumeInfo.authors}
-                image={item.volumeInfo.imageLinks.thumbnail}
-                description={item.volumeInfo.description}
-                link={item.volumeInfo.previewLink}
-                saveBtnClickHandle={this.saveBtnClickHandle}
-              />
-            ))}
-          </SubContainer>
-        ) : (
-            <SubContainer><h2>No results to display</h2></SubContainer>
-          )}
-      </MainContainer>
-    );
+    if (!this.state.books) return <NoMatch />
+    else
+      return (
+        <MainContainer fluid>
+          <Nav />
+          <Jumbotron />
+          <form>
+            <Input
+              value={this.state.searchWord}
+              onChange={this.handleInputChange}
+              name="searchWord"
+              placeholder="Please enter search words"
+            />
+            <SearchBtn onClick={this.searchBtnClickHandle}>
+              Search</SearchBtn>
+            <br /><br />
+          </form>
+          {this.state.books.length ? (
+            <SubContainer>
+              <h2>Searched Result</h2>
+              {this.state.books.map(item => (
+                <ResultCard
+                  key={item.id}
+                  id={item.id}
+                  title={item.volumeInfo.title}
+                  authors={item.volumeInfo.authors}
+                  image={item.volumeInfo.imageLinks.thumbnail}
+                  description={item.volumeInfo.description}
+                  link={item.volumeInfo.previewLink}
+                  saveBtnClickHandle={this.saveBtnClickHandle}
+                />
+              ))}
+            </SubContainer>
+          ) : (
+              <SubContainer><h2>No results to display</h2></SubContainer>
+            )}
+        </MainContainer>
+      );
   }
 };
 

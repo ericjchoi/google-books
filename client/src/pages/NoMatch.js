@@ -1,14 +1,14 @@
 import React from "react";
-import Jumbotron from "../components/Jumbotron/jumbotron.js";
+import Nav from "../components/Nav/nav.js";
+import MainContainer from "../components/MainContainer/mainContainer.js";
 
 function NoMatch() {
   return (
-      <Jumbotron>
-        <h1>404 Page Not Found</h1>
-        <h1>
-          <span role="img" aria-label="Face With Rolling Eyes Emoji">🙄</span>
-        </h1>
-      </Jumbotron>
+    <MainContainer fluid>
+      <Nav /><br /><br /><br /><br /><br /><br />
+      <h1 style={{ textAlign: "center" }}>Your search did not match any book results.</h1>
+      <h1 style={{ textAlign: "center" }}><span role="img" aria-label="Face With Rolling Eyes Emoji" style={{ fontSize: "25rem" }}>🙄</span></h1>
+    </MainContainer>
   );
 }
 

@@ -16,7 +16,7 @@ class Saved extends Component {
   }
 
   displaySavedBooks = () => {
-    console.log("display saved books function");
+    console.log("rendered saved books from database");
     API.savedBooks()
       .then(res => this.setState({ books: res.data }))
       .catch(err => console.log(err));
