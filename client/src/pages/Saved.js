@@ -16,6 +16,7 @@ class Saved extends Component {
   }
 
   displaySavedBooks = () => {
+    console.log("display saved books function");
     API.savedBooks()
       .then(res => this.setState({ books: res.data }))
       .catch(err => console.log(err));
@@ -34,9 +35,10 @@ class Saved extends Component {
         <Jumbotron />
         {this.state.books.length ? (
           <SubContainer>
-            <h5>Saved Books</h5>
+            <h2>Saved Books</h2>
             {this.state.books.map(oneSavedBook => (
               <SavedCard
+              key={oneSavedBook._id}
                 id={oneSavedBook._id}
                 title={oneSavedBook.title}
                 authors={oneSavedBook.authors}
@@ -48,7 +50,7 @@ class Saved extends Component {
             ))}
           </SubContainer>
         ) : (
-            <SubContainer><h5><i>There are no books saved</i></h5></SubContainer>
+            <SubContainer><h2>There are no books saved</h2></SubContainer>
           )}
       </MainContainer>
     );

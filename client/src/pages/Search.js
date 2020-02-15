@@ -6,6 +6,7 @@ import { Input, SearchBtn } from "../components/Form/form.js";
 import SubContainer from "../components/SubContainer/subContainer.js";
 import ResultCard from "../components/ResultCard/resultCard.js";
 import API from "../utils/API.js";
+import Saved from "./Saved.js";
 
 class Search extends Component {
   state = {
@@ -36,19 +37,19 @@ class Search extends Component {
     }
   };
 
-  saveBtnClickHandle = id => {
+  saveBtnClickHandle = ID => {
     let currentBook = this.state.books
-      .find(currentBook => (currentBook.id === id));
-    console.log(currentBook);
+      .find(currentBook => (currentBook.id === ID));
+
     API.saveBook({
-      id: currentBook.id,
+      _id: currentBook.id,
       title: currentBook.volumeInfo.title,
       link: currentBook.volumeInfo.previewLink,
       authors: currentBook.volumeInfo.authors,
-      image: "http://books.google.com/books/content?id=" + currentBook.id + "&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      image: currentBook.volumeInfo.imageLinks.thumbnail,
       description: currentBook.volumeInfo.description
     })
-      .then(res => this.searchBooks())
+      .then(res => Saved.displaySavedBooks())
       .catch(err => console.log(err));
   };
 
@@ -70,14 +71,14 @@ class Search extends Component {
         </form>
         {this.state.books.length ? (
           <SubContainer>
-            <h5>Results</h5>
+            <h2>Searched Result</h2>
             {this.state.books.map(item => (
               <ResultCard
+                key={item.id}
                 id={item.id}
                 title={item.volumeInfo.title}
                 authors={item.volumeInfo.authors}
-                //image={item.volumeInfo.imageLinks.thumbnail}
-                image={"http://books.google.com/books/content?id=" + item.id + "&printsec=frontcover&img=1&zoom=1&source=gbs_api"}
+                image={item.volumeInfo.imageLinks.thumbnail}
                 description={item.volumeInfo.description}
                 link={item.volumeInfo.previewLink}
                 saveBtnClickHandle={this.saveBtnClickHandle}
@@ -85,11 +86,11 @@ class Search extends Component {
             ))}
           </SubContainer>
         ) : (
-            <SubContainer><h5>No results to display</h5></SubContainer>
+            <SubContainer><h2>No results to display</h2></SubContainer>
           )}
       </MainContainer>
     );
   }
-}
+};
 
 export default Search;

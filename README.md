@@ -13,19 +13,25 @@ Figure 2. Book searched screen after entering search word "stratocaster"
 ![figure3](./client/public/images/book_info.jpg)
 Figure 3. `View` button click opens book's information link page
 
+![figure4](./client/public/images/book_saved.jpg)
+Figure 4. Rendering `Saved` books data from mongoDB
+
 ## Current development
 - created Github repo
 - created react app using boilerplate
 - front-end
 - components
 - API
-- book search and render to homepage
-- `View` button click opens book's information link page
+- Routes
+- connection to mongoDB
+- book search and render its results on homepage
+- `View` button click opens the book's information link page
+- `Save` button click stores the book data into mongoDB
+- `Saved` page renders saved book data from mongoDB
 
 ## Under construction
-- routes
-- `save` and `delete` button click handling
-- connection to mongoDB 
+- `delete` button click deletes the book from mongoDB
+- handle erroneous search word entry
 - deploy to Heroku
 
 ## Technologies used

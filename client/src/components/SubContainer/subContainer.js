@@ -1,5 +1,4 @@
 import React from "react";
-import "./subContainer.css";
 
 function SubContainer(props) {
     return (
