@@ -28,10 +28,10 @@ Figure 4. Rendering `Saved` books data from mongoDB
 - `View` button click opens the book's information link page
 - `Save` button click stores the book data into mongoDB
 - `Saved` page renders saved book data from mongoDB
+- `delete` button click deletes the book data from mongoDB
 
 ## Under construction
-- `delete` button click deletes the book from mongoDB
-- handle erroneous search word entry and duplicated save attempt, etc.
+- handle erroneous app usage e.g. meaningless search word entry and duplicated save attempt, etc.
 - deploy to Heroku
 
 ## Technologies used
