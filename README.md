@@ -46,5 +46,4 @@ Figure 6. When the Google Books API couldn't find the result
 - MongoDB, mongoose
 - React, JSX
 
-# Run App in Heroku
-- link will be added upon deployment
+## [Run app on Heroku](https://shrouded-reef-42849.herokuapp.com/)
