@@ -1,3 +1,4 @@
+// Importing necessary components
 import React, { Component } from "react";
 import MainContainer from "../components/MainContainer/mainContainer.js";
 import Nav from "../components/Nav/nav.js";
@@ -9,6 +10,7 @@ import API from "../utils/API.js";
 import Saved from "./Saved.js";
 import NoMatch from "./NoMatch.js";
 
+// State
 class Search extends Component {
   state = {
     books: [],
@@ -32,6 +34,7 @@ class Search extends Component {
     });
   };
 
+  // When search button clicked
   searchBtnClickHandle = event => {
     event.preventDefault();
     if (this.state.searchWord) {
@@ -39,6 +42,7 @@ class Search extends Component {
     }
   };
 
+  // When save button clicked
   saveBtnClickHandle = ID => {
     let currentBook = this.state.books
       .find(currentBook => (currentBook.id === ID));
