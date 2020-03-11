@@ -43,7 +43,7 @@ Figure 6. When the Google Books API couldn't find the result
 - Node.js, npm packages
 - Google Books API
 - Axios
-- MongoDB, mongoose ORM
+- MongoDB, mongoose ODM
 - React, JSX
 
 ## [Run app on Heroku](https://shrouded-reef-42849.herokuapp.com/)
