@@ -1,3 +1,4 @@
+// Seeding for database Collection
 const mongoose = require("mongoose");
 const db = require("../models");
 
