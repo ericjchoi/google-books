@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// Type set up for bookSchema
 const bookSchema = new Schema({
   title: { type: String, required: true },
   link: { type: String, required: true },
