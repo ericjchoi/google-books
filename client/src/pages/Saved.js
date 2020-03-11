@@ -1,3 +1,4 @@
+// Importing necessary components
 import React, { Component } from "react";
 import MainContainer from "../components/MainContainer/mainContainer.js";
 import Nav from "../components/Nav/nav.js";
@@ -6,6 +7,7 @@ import SubContainer from "../components/SubContainer/subContainer.js";
 import SavedCard from "../components/SavedCard/savedCard.js";
 import API from "../utils/API.js";
 
+// State
 class Saved extends Component {
   state = {
     books: []
@@ -22,6 +24,7 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
+  // When delete button clicked
   deleteBtnClickHandle = id => {
     API.deleteBook(id)
       .then(res => this.displaySavedBooks())
