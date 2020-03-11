@@ -1,7 +1,9 @@
+// Importing components
 import React from "react";
 import Nav from "../components/Nav/nav.js";
 import MainContainer from "../components/MainContainer/mainContainer.js";
 
+// function for rendering when there is no matching search results e.g. due to the meaningless search word input
 function NoMatch() {
   return (
     <MainContainer fluid>
