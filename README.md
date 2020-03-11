@@ -39,11 +39,11 @@ Figure 6. When the Google Books API couldn't find the result
 - deployment to Heroku
 
 ## Technologies used
-- HTML, CSS, Javascript, Bootstrap
-- node, npm packages
+- HTML5, CSS, JavaScript, Bootstrap
+- Node.js, npm packages
 - Google Books API
 - Axios
-- MongoDB, mongoose
+- MongoDB, mongoose ORM
 - React, JSX
 
 ## [Run app on Heroku](https://shrouded-reef-42849.herokuapp.com/)
