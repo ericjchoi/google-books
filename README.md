@@ -1,7 +1,7 @@
 # google-books
 
 ## Overview
-This app helps user to search books using Google Books API, and save books of interest in MongoDB. `View` button will link to the book's information link. `Delete` button will delete book data from MongoDB.
+This app helps user to search books using Google Books API, and save books of interest in MongoDB. `View` button will link to the book's information link page. `Delete` button will delete book data from MongoDB. App also handles meaningless search word entry with response of displaying no match page.
 
 ## App running screenshot
 ![figure1](./client/public/images/initial_load_home.jpg)
@@ -23,14 +23,14 @@ Figure 5. Rendering `Saved` books data from mongoDB
 Figure 6. When the Google Books API couldn't find the result
 
 ## Current development
-- created Github repo
-- created react app using boilerplate
+- created Github repository
+- created React app using boilerplate
 - front-end
 - components
 - API
 - Routes
 - connection to mongoDB
-- book search and render its results on homepage
+- book search function and render its results on homepage
 - `View` button click opens the book's information link page
 - `Save` button click stores the book data into mongoDB
 - `Saved` page renders saved book data from mongoDB
